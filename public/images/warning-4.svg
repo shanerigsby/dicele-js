@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="128" height="128" version="1.1" viewBox="0 0 33.867 33.867" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect x=".52917" y=".52917" width="32.808" height="32.808" rx="2.6458" ry="2.8283" fill="#CB9C3B"/>
+  <rect x=".52917" y=".52917" width="32.808" height="30.692" rx="2.6458" ry="2.6458" fill="#EDB646"/>
+  <g fill="#4B3916">
+    <circle cx="10.465" cy="21.99" r="4.2333"/>
+    <circle cx="23.401" cy="9.76" r="4.2333"/>
+    <circle cx="10.465" cy="9.76" r="4.2333"/>
+    <circle cx="23.401" cy="21.99" r="4.2333"/>
+   </g>
+ </g>
+</svg>
