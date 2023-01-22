@@ -646,14 +646,18 @@ function statShare() {
 
 }
 
+var source;
+var dest;
+function makeTutorial(showOverlay) {
 
-function makeTutorial() {
 
+    source = document.querySelectorAll(`[data-value]`)[state.findIndex((value, index) => value != solution[index])];
+    dest = document.querySelectorAll(`[data-value]`)[solution.findIndex((value, index) => value == source.getAttribute('data-value') && state[index] != solution[index])];
 
-    const source = document.querySelectorAll(`[data-value]`)[state.findIndex((value, index) => value != solution[index])];
-    const dest = document.querySelectorAll(`[data-value]`)[solution.findIndex((value, index) => value == source.getAttribute('data-value') && state[index] != solution[index])];
-
-    document.getElementById('tut-overlay').style.display = "block";
+    if(showOverlay){
+        document.getElementById('tut-overlay').style.display = "block";
+    }
+    
 
     source.style.zIndex = "5";
     dest.style.zIndex = "5";
@@ -1156,14 +1160,34 @@ var sortable = Sortable.create(board, {
         }
 
         if (isTutorial) {
-            document.querySelector(".tut-hand").style.display = 'none';
-            document.getElementById('tut-overlay').style.display = "none";
-            document.querySelector(".box-modal").style.display = 'none';
-            isTutorial = false;
+            if(moves == 20){
+                document.querySelector(".tut-hand").style.display = 'none';
+                source.style.zIndex = "2";
+                document.querySelector(".box-modal").style.left = (source.getBoundingClientRect().x - source.getBoundingClientRect().width/2) + "px";
+                document.querySelector(".box-modal").style.top = (source.getBoundingClientRect().y - 70) + "px";
+                document.querySelectorAll(".tutMsg")[0].style.display = "none";
+                document.querySelectorAll(".tutMsg")[1].innerHTML = "MATCHED";
+
+                setTimeout(resumeGame,2000);
+                isTutorial = false;
+            }
+            else{
+                document.querySelector(".tut-hand").style.display = 'none';
+                source.style.zIndex = "4";
+                resumeGame();
+                isTutorial = false;
+            }
+            
         }
 
-        if (FirstTime && (moves == 20 || moves == 19) && !isArchive) {
-            makeTutorial()
+        if (FirstTime && !isArchive) {
+            if(moves == 20){
+                setTimeout(SetWaitTimer,2000);
+            }
+            else if(moves == 19){
+                SetWaitTimer();
+            }
+            
         }
 
     },
@@ -1175,8 +1199,39 @@ if (localStorage.LastSolveDate) {
     }
 }
 
-if (FirstTime && moves == 21) {
-    makeTutorial();
+if (FirstTime && !isArchive) {
+    if(moves == 21){
+        makeTutorial(true);
+        var waitTime = 0;
+    }
+    else if(moves == 20 || moves == 19){
+        SetWaitTimer();
+    }
+    
+}
+
+var waitInterval;
+
+function resumeGame() {
+    document.getElementById('tut-overlay').style.display = "none";
+    document.querySelector(".box-modal").innerHTML = `<h6 class = "tutMsg">SWAP DICE TO FIND ITS</h6>
+    <h6 class = "tutMsg">CORRECT PLACE</h6>`;
+    document.querySelector(".box-modal").style.display = "none"
+}
+
+function SetWaitTimer(){
+    waitTime = 0;
+    waitInterval = setInterval(addOneToWaitTime,1000)
+}
+
+function addOneToWaitTime(){
+    if(waitTime<6){
+        waitTime++
+    }
+    else{
+        makeTutorial(false);
+        clearInterval(waitInterval);
+    }
 }
 
 
