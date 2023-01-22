@@ -467,6 +467,7 @@ function gameArchiveFinish(won) {
 
         setRemainingTime();
         document.querySelector(".finish-stats-container").style.display = "none";
+        document.getElementById("finish-timer").style.display = "none";
         openModal("finish-modal");
     }
 
@@ -652,7 +653,7 @@ function makeTutorial() {
     const source = document.querySelectorAll(`[data-value]`)[state.findIndex((value, index) => value != solution[index])];
     const dest = document.querySelectorAll(`[data-value]`)[solution.findIndex((value, index) => value == source.getAttribute('data-value') && state[index] != solution[index])];
 
-    document.getElementById('overlay').style.display = "block";
+    document.getElementById('tut-overlay').style.display = "block";
 
     source.style.zIndex = "5";
     dest.style.zIndex = "5";
@@ -1107,7 +1108,6 @@ var sortable = Sortable.create(board, {
     animation: 250,
     filter: ".no-drag",
     dragClass: "dice-drag",
-    chosenClass: "dice-chosen",
     swapClass: "dice-drop",
     ghostClass: "dice-ghost",
     onMove: function (evt) {
@@ -1157,7 +1157,7 @@ var sortable = Sortable.create(board, {
 
         if (isTutorial) {
             document.querySelector(".tut-hand").style.display = 'none';
-            document.getElementById('overlay').style.display = "none";
+            document.getElementById('tut-overlay').style.display = "none";
             document.querySelector(".box-modal").style.display = 'none';
             isTutorial = false;
         }
