@@ -16,8 +16,8 @@
 <body>
     <img src="images/tutorial hand.svg" class="tut-hand">
     <div class="box-modal">
-        <h6>SWAP DICE TO FIND ITS</h6>
-        <h6>CORRECT PLACE</h6>
+        <h6 class = "tutMsg">SWAP DICE TO FIND ITS</h6>
+        <h6 class = "tutMsg">CORRECT PLACE</h6>
     </div>
     <div class="desktop-vert-container"></div>
 
@@ -62,6 +62,7 @@
         </div>
         <!-- Sidebar overlay -->
         <div class="w3-overlay" id="overlay" onclick="closeSideBar()"></div>
+        <div class="w3-overlay" id="tut-overlay" onclick="closeSideBar()"></div>
         <!-- Navbar -->
         <nav class="w3-light-grey navbar">
             <button class="nav-left nav-button" onclick="openSideBar()">
@@ -402,7 +403,7 @@
                     </div>
                 </div>
                 <div class="share-timer">
-                    <div class="timer">
+                    <div class="timer" id="finish-timer">
                         <span class="timer-text">NEXT DICELE</span>
                         <span class="timer-time" data-field="timer-time">00:00:00</span>
                     </div>
@@ -461,7 +462,38 @@
                     Daily Dicele <span class="game-number">#00</span>
                 </span>
                 <div class="square" id="game">
-                    <div id="board"></div>
+                    <div id="board">
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice no-drag" data-value="6"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice no-drag" data-value="6"></div>
+                        <div class="dice" data-value="0"></div>
+
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice no-drag" data-value="6"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice no-drag" data-value="6"></div>
+                        <div class="dice" data-value="0"></div>
+                        
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        <div class="dice" data-value="0"></div>
+                        
+                    </div>
                     <div class="game-sum-container-vertical">
                         <div class="circle sum"></div>
                         <div class="circle sum"></div>
