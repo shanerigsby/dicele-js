@@ -36,6 +36,7 @@ function BackToGame() {
     })
 
     openModal("archive-modal");
+    closeModal("finish-modal");
     
     solution = SolutionArr[Day];
 
@@ -364,6 +365,8 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
     })
 
     openModal("finish-modal");
+    document.querySelector(".finish-stats-container").style.display = "flex";
+    document.getElementById("finish-timer").style.display = "flex";
 
     if (won) {
         document.querySelector(".win-container").style.display = "contents";
