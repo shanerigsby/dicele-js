@@ -5,12 +5,11 @@ function openSideBar() {
 
 function closeSideBar() {
     document.getElementById("sidebar").style.display = "none";
-    if (!isTutorial) {
-        document.getElementById("overlay").style.display = "none";
-    }
+    document.getElementById("overlay").style.display = "none";
 }
 
 function openModal(modalId) {
+    closeSideBar();
     document.getElementById(modalId).style.display = "flex";
 }
 
@@ -25,6 +24,7 @@ function BackToGame() {
 
     document.querySelector(".game-number").innerHTML = `#${Day
         }`;
+        document.querySelector(".game-mode").innerHTML = `Daily Dicele`;
 
     document.querySelectorAll(".nav-left").forEach((element, index) => {
         if (index == 1) {
@@ -248,6 +248,7 @@ function StartArchiveGame(index) {
 
     document.querySelector(".game-number").innerHTML = `#${index + 1
         }`;
+    document.querySelector(".game-mode").innerHTML = `Dicele`;
 
     document.querySelector(".moves-number").innerHTML = `${moves
         }`;
@@ -364,6 +365,8 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
             }%`
     })
 
+    document.querySelector(".invite-friends").style.display = "none";
+
     openModal("finish-modal");
     document.querySelector(".finish-stats-container").style.display = "flex";
     document.getElementById("finish-timer").style.display = "flex";
@@ -372,6 +375,9 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
         document.querySelector(".win-container").style.display = "contents";
         document.querySelector(".win-text").style.display = "inline";
         document.querySelector(".lose-container").style.display = "none";
+        party.confetti(document.querySelector(".finish-banner-win"), {
+            count: 100,
+        });
         let stars = "";
         let winComment = "Aren't you a genius!";
         if (movesRemaining > 0) {
@@ -565,6 +571,7 @@ function gameArchiveFinish(won) {
         document.querySelector(".finish-stats-container").style.display = "none";
         document.getElementById("finish-timer").style.display = "none";
 
+        document.querySelector(".invite-friends").style.display = "block";
         openModal("finish-modal");
     }
 
@@ -1117,8 +1124,8 @@ document.querySelectorAll(".sum").forEach((element, index) => {
     }
 });
 
-function check(value, index, solution, state) {
-    value = Number(value);
+function check(index, solution, state) {
+    const value = Number(state[index]);
     if (value === solution[index]) {
         return "success";
     }
@@ -1180,12 +1187,12 @@ function writeBoard(boardElement, state, solution) {
     Array.from(boardElement.children).forEach((dice, index) => {
         if (state[index] !== 6) {
             dice.setAttribute('data-value', state[index]);
-            dice.className = `dice${check(state[index], index, solution, state) === "success"
+            dice.setAttribute('data-state', check(index, solution, state));
+            dice.className = `dice${check(index, solution, state) === "success"
                 ? " no-drag"
                 : ""
                 }`
             dice.innerHTML = `<img src="/images/${check(
-                state[index],
                 index,
                 solution,
                 state
@@ -1193,21 +1200,6 @@ function writeBoard(boardElement, state, solution) {
             dice.style = "";
         }
     });
-    // boardElement.innerHTML = state
-    //     .map((element, index) =>
-    //         element === 6
-    //             ? '<div class="no-drag" data-value="6"></div>'
-    //             : `<div class="dice${check(element, index, solution, state) === "success"
-    //                 ? " no-drag"
-    //                 : ""
-    //             }" data-value=${element}><img src="/images/${check(
-    //                 element,
-    //                 index,
-    //                 solution,
-    //                 state
-    //             )}-${element + 1}.svg"></div>`
-    //     )
-    //     .join("");
 }
 
 const board = document.getElementById("board");

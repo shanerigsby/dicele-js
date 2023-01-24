@@ -24,6 +24,7 @@ function BackToGame() {
 
     document.querySelector(".game-number").innerHTML = `#${Day
         }`;
+        document.querySelector(".game-mode").innerHTML = `Daily Dicele`;
 
     document.querySelectorAll(".nav-left").forEach((element, index) => {
         if (index == 1) {
@@ -247,6 +248,7 @@ function StartArchiveGame(index) {
 
     document.querySelector(".game-number").innerHTML = `#${index + 1
         }`;
+    document.querySelector(".game-mode").innerHTML = `Dicele`;
 
     document.querySelector(".moves-number").innerHTML = `${moves
         }`;
@@ -363,7 +365,7 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
             }%`
     })
 
-    document.querySelector(".invite-friends").style.display = none;
+    document.querySelector(".invite-friends").style.display = "none";
 
     openModal("finish-modal");
     document.querySelector(".finish-stats-container").style.display = "flex";
