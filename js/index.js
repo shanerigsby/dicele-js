@@ -1306,6 +1306,19 @@ var sortable = Sortable.create(board, {
 
         checkMatched();
 
+        if(moves == 20){
+            if(isArchive){
+                gtag('event', 'gameStart', {
+                    'LevelType': 'Archive'
+                  });
+            }
+            else{
+                gtag('event', 'gameStart', {
+                    'LevelType': 'Daily'
+                  });
+            }
+        }
+
         if (!isArchive) {
             SaveGameStates();
 
