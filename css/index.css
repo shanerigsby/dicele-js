@@ -385,6 +385,17 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    animation: zoomInOut 2.5s infinite linear;
+  
+  
+}
+  
+@keyframes zoomInOut {
+    0%   {transform: scale(1);}
+    25%  {transform: scale(1.2);}
+    50%  {transform: scale(1);}
+    75%  {transform: scale(1.2);}
+    100% {transform: scale(1);}
 }
 
 .share:before {
