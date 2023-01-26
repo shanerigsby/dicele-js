@@ -53,13 +53,13 @@ function BackToGame() {
     openModal("archive-modal");
     closeModal("finish-modal");
     
-    solution = SolutionArr[Day];
+    solution = Array.from(SolutionArr[Day]);
     UpdateSums();
 
     if (localStorage.LastResumeDate) {
         date = new Date(localStorage.LastResumeDate)
         if (dateDiffInDays(currentDate, date) == 0) {
-
+            
             const tempArr = JSON.parse(localStorage.save_State);
 
             for (var i = 0; i < 25; i++) {
@@ -82,7 +82,7 @@ function BackToGame() {
     }
     else {
 
-        state = SpawnArr[Day]
+        state = Array.from(SpawnArr[Day])
         playTime = 0;
         moves = 21;
         document.querySelector(".moves-number").innerHTML = `${21
@@ -262,8 +262,9 @@ function StartArchiveGame(index) {
     isArchive = true;
     archiveNum = index;
 
-    state = SpawnArr[archiveNum+1]
-    solution = SolutionArr[archiveNum + 1]
+    state = Array.from(SpawnArr[archiveNum+1])
+    solution = Array.from(SolutionArr[archiveNum + 1])
+
     UpdateSums();
     writeBoard(board, state, solution);
     closeModal("archive-modal");
@@ -642,7 +643,7 @@ function setArchiveStats(states, stars) {
 
     document.querySelector("[data-title=games-played").innerHTML = `${states.filter(x => x != 0).length}/${Day - 1} (${Math.round(states.filter(x => x != 0).length * 100 / (Day - 1))}%)`
     document.querySelector("[data-title=games-completed").innerHTML = `${states.filter(x => x === 2).length}/${Day - 1} (${Math.round(states.filter(x => x === 2).length * 100 / (Day - 1))}%)`
-    document.querySelector("[data-title=games-maxed").innerHTML = `${stars.filter(x => x === 5).length}/${Day - 1} (${Math.round(stars.filter(x => x === 5).length * 100 / (Day - 1))}%)`
+    document.querySelector("[data-title=games-maxed").innerHTML = `${stars.filter(x => x >= 5).length}/${Day - 1} (${Math.round(stars.filter(x => x === 5).length * 100 / (Day - 1))}%)`
 
 }
 
@@ -907,9 +908,9 @@ const SolutionArr = [[0, 1, 3, 1, 2, 2, 6, 2, 6, 2, 1, 3, 3, 5, 5, 3, 6, 4, 6, 0
 
 
 //solution of that day
-var solution = SolutionArr[Day];
+var solution = Array.from(SolutionArr[Day])
 //state of that day
-var state = SpawnArr[Day]
+var state = Array.from(SpawnArr[Day])
 
 var FirstTime = false;
 var isArchive = false;
