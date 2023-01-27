@@ -643,7 +643,7 @@ function setArchiveStats(states, stars) {
 
     document.querySelector("[data-title=games-played").innerHTML = `${states.filter(x => x != 0).length}/${Day - 1} (${Math.round(states.filter(x => x != 0).length * 100 / (Day - 1))}%)`
     document.querySelector("[data-title=games-completed").innerHTML = `${states.filter(x => x === 2).length}/${Day - 1} (${Math.round(states.filter(x => x === 2).length * 100 / (Day - 1))}%)`
-    document.querySelector("[data-title=games-maxed").innerHTML = `${stars.filter(x => x >= 5).length}/${Day - 1} (${Math.round(stars.filter(x => x === 5).length * 100 / (Day - 1))}%)`
+    document.querySelector("[data-title=games-maxed").innerHTML = `${stars.filter(x => x >= 5).length}/${Day - 1} (${Math.round(stars.filter(x => x >= 5).length * 100 / (Day - 1))}%)`
 
 }
 
@@ -1387,7 +1387,6 @@ if (FirstTime && !isArchive) {
         setTimeout(makeTutorial,2000);
         var waitTime = 0
     }
-    
 }
 
 

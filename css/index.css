@@ -349,6 +349,8 @@ body {
 
 .visit-tomorrow {
     font-weight: 500;
+    max-width: 100%;
+    /* white-space: nowrap; */
 }
 
 .invite-friends {
@@ -725,8 +727,13 @@ body {
     background-color: #B2B2B2;
 }
 
+.finish-stats-text {
+    white-space: nowrap
+}
+
 .win-text {
     margin: 1rem 0;
+    text-align: center;
 }
 
 /* Game area */
