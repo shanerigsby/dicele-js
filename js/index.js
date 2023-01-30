@@ -358,24 +358,9 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
             if (Number(localStorage.CurrentStreak) > Number(localStorage.HighestStreak)) {
                 localStorage.HighestStreak = Number(localStorage.CurrentStreak);
             }
-
-            gtag('event', 'gameEnd', {
-                'Status': 'Win',
-                'GameTime': '' + playTime + '',
-                'movesCount': '' + (21-moves) + '',
-                'matchcount': '' + matches + ''
-              });
-            
         }
         else {
             localStorage.CurrentStreak = 0;
-
-            gtag('event', 'gameEnd', {
-                'Status': 'Lose',
-                'GameTime': '' + playTime + '',
-                'movesCount': '' + (21-moves) + '',
-                'matchcount': '' + matches + ''
-              });
         }
 
         localStorage.setItem("freqArr", JSON.stringify(freqArr));
