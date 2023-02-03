@@ -56,6 +56,11 @@ function BackToGame() {
     solution = Array.from(SolutionArr[Day]);
     UpdateSums();
 
+    state = Array.from(SpawnArr[Day])
+    playTime = 0;
+    moves = 21;
+    document.querySelector(".moves-number").innerHTML = `${21}`;
+
     if (localStorage.LastResumeDate) {
         date = new Date(localStorage.LastResumeDate)
         if (dateDiffInDays(currentDate, date) == 0) {
@@ -79,15 +84,6 @@ function BackToGame() {
                 }
             }
         }
-    }
-    else {
-
-        state = Array.from(SpawnArr[Day])
-        playTime = 0;
-        moves = 21;
-        document.querySelector(".moves-number").innerHTML = `${21
-            }`;
-
     }
 
     writeBoard(board, state, solution);
@@ -903,8 +899,6 @@ var isTutorial = false;
 var archiveNum;
 
 
-
-
 if (localStorage.ArchiveList) {
     if (JSON.parse(localStorage.ArchiveList).length < Day) {
         while (JSON.parse(localStorage.ArchiveList).length < Day) {
@@ -1387,7 +1381,7 @@ function SetWaitTimer(){
 }
 
 function checkTutorial(){
-    if(moves > 18){
+    if(moves > 18 && !isArchive){
         makeTutorial(false);
     }
 }
