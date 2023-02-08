@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="utf-8" />
@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="css/index.css" />
 
 
-    <title>Dicele | Daily Number Puzzle</title>
+    <title>数合計 | Daily Number Puzzle</title>
     <link rel="icon" type="image/png" href="https://dicele.com/favicon.ico">
     <meta name="description" content="Can you solve it? Try now at dicele.com">
-    <meta property="og:title" content="Dicele | Daily Number Puzzle" />
+    <meta property="og:title" content="数合計 | Daily Number Puzzle" />
     <meta property="og:description" content="Can you solve it? Try now at dicele.com">
     <meta property="og:url" content="https://dicele.com/" />
     <meta property="og:image" content="https://dicele.com/favicon.ico" />
-    <meta name="twitter:title" content="Dicele | Daily Number Puzzle">
+    <meta name="twitter:title" content="数合計 | Daily Number Puzzle">
     <meta name="twitter:description" content="Can you solve it? Try now at dicele.com">
     <meta name="twitter:image" content="https://dicele.com/favicon.ico">
 
@@ -56,7 +56,7 @@
             <div class="sidebar-heading">
                 <div class="banner">
                     <img src="images/menu-icon.svg" class="menu-icon" />
-                    <span class="menu-banner-text">MENU</span>
+                    <span class="menu-banner-text">メニュー</span>
                     <div class="menu-banner-triangle"></div>
                 </div>
                 <div class="sidebar-close" onclick="closeSideBar()">
@@ -65,27 +65,29 @@
             </div>
             <div class="sidebar-item" onclick="openModal('archive-modal')">
                 <img src="/images/archive_icon.png" class="sidebar-item-icon" />
-                <span class="sidebar-icon-label">Archive</span>
+                <span class="sidebar-icon-label">アーカイブ</span>
             </div>
             <div class="sidebar-item" onclick="openModal('stats-modal')">
                 <img src="/images/stats-icon.svg" class="sidebar-item-icon" />
-                <span class="sidebar-icon-label">Statistics</span>
+                <span class="sidebar-icon-label">統計</span>
             </div>
             <div class="sidebar-item" onclick="openModal('help-modal')">
                 <img src="/images/help-icon.svg" class="sidebar-item-icon" />
-                <span class="sidebar-icon-label">Help</span>
+                <span class="sidebar-icon-label">ヘルプ</span>
             </div>
             <div class="sidebar-item" onclick="window.open(`/Blogs/index.html`,``)">
                 <img src="/images/blog_icon.png" class="sidebar-item-icon" />
-                <span class="sidebar-icon-label">Blogs</span>
+                <span class="sidebar-icon-label">ブログ</span>
             </div>
             <div class="sidebar-separator"></div>
             <div class="sidebar-item" onclick="contact()">
                 <img src="/images/mail_icon.png" class="sidebar-item-icon" />
+<!-- TODO: Translate next line -->
                 <span class="sidebar-mail">CONTACT@SAGACISTUDIOS.COM</span>
             </div>
             <div class="sidebar-item">
                 <img src="/images/copyright_icon.png" class="sidebar-item-icon" />
+<!-- TODO: Translate next line -->
                 <span class="sidebar-copyright">SAGACISYSTEMS</span>
             </div>
         </div>
@@ -117,7 +119,7 @@
             <div class="w3-modal-content w3-animate-bottom">
                 <div class="stats-banner">
                     <div class="banner-left"></div>
-                    <span class="banner-text">STATISTICS</span>
+                    <span class="banner-text">統計</span>
                     <div class="banner-right"></div>
                 </div>
                 <div class="modal-close-icon" onclick="closeModal('stats-modal')">&times;</div>
@@ -126,39 +128,39 @@
                         <div class="stats-group-value" data-field="games-played">
                             00
                         </div>
-                        <div class="stats-group-title">Played</div>
+                        <div class="stats-group-title">遊んだ</div>
                     </div>
                     <div class="stats-separator"></div>
                     <div class="stats-group">
                         <div class="stats-group-value" data-field="win-percent">
                             00
                         </div>
-                        <div class="stats-group-title">Win %</div>
+                        <div class="stats-group-title">勝つ %</div>
                     </div>
                     <div class="stats-separator"></div>
                     <div class="stats-group">
                         <div class="stats-group-value" data-field="stars-count">
                             00
                         </div>
-                        <div class="stats-group-title">Stars Collected</div>
+                        <div class="stats-group-title">集めた星</div>
                     </div>
                     <div class="stats-separator"></div>
                     <div class="stats-group">
                         <div class="stats-group-value" data-field="current-streak">
                             00
                         </div>
-                        <div class="stats-group-title">Current Streak</div>
+                        <div class="stats-group-title">現在のストリーク</div>
                     </div>
                     <div class="stats-separator"></div>
                     <div class="stats-group">
                         <div class="stats-group-value" data-field="highest-streak">
                             00
                         </div>
-                        <div class="stats-group-title">Highest Streak</div>
+                        <div class="stats-group-title">最高連勝</div>
                     </div>
                 </div>
                 <div class="stars-progress">
-                    <span class="stars-title">STAR DISTRIBUTION</span>
+                    <span class="stars-title">星の分布</span>
                     <div class="star-progress-container">
                         <span class="stars-number">0</span>
                         <img src="/images/star.png" class="star-icon" />
@@ -208,15 +210,17 @@
                         </div>
                     </div>
                 </div>
+<!-- TODO: Translate next line -->
                 <span class="visit-tomorrow">PLEASE VISIT TOMORROW</span>
                 <div class="share-timer">
                     <div class="timer">
+<!-- TODO: Translate next line -->
                         <span class="timer-text">NEXT DICELE</span>
                         <span class="timer-time" data-field="timer-time">00:00:00</span>
                     </div>
                     <div class="share" onclick="statShare()">
                         <img src="/images/share.png" class="share-icon" />
-                        <span class="share-text">SHARE</span>
+                        <span class="share-text">共有</span>
                     </div>
                 </div>
             </div>
@@ -226,15 +230,14 @@
             <div class="w3-modal-content w3-animate-bottom w3-card-4">
                 <div class="help-banner">
                     <div class="banner-left"></div>
-                    <span class="banner-text">HOW TO PLAY</span>
+                    <span class="banner-text">遊び方</span>
                     <div class="banner-right"></div>
                 </div>
                 <div class="modal-close-icon" onclick="closeModal('help-modal')">&times;</div>
-                <span class="help-text">Solve the DICELE in 21 moves or less</span>
+                <span class="help-text">21 手以内でパズルを解く</span>
                 <div class="help-grid">
                     <div class="help-grid-text">
-                        Rearrange the dice such that they add up to the sum of
-                        rows and columns indicated on the board.
+                        ボードに表示されている行と列の合計に合わせてサイコロを配置します。
                     </div>
                     <div class="help-grid-sum-vertical">
                         <span class="help-grid-sum-value">15</span>
@@ -255,26 +258,23 @@
                     </div>
                 </div>
                 <div class="help-method-text">
-                    You can swap any two dice on the board. The dice colour will
-                    change to show how close you are.
+                    ボード上の任意の 2 つのサイコロを交換できます。サイコロの色が変化して、あなたがどれだけ近いかを示します。
                 </div>
                 <span class="help-method-example-text">EXAMPLE</span>
                 <div class="help-example-group">
                     <div class="help-example-part">
                         <img src="/images/help_1.png" class="help-example-image" />
-                        <span class="help-example-desc">Dice is neither in correct row nor in correct
-                            column</span>
+                        <span class="help-example-desc">サイコロが正しい行または列にない</span>
                     </div>
                     <div class="help-example-seperator"></div>
                     <div class="help-example-part">
                         <img src="/images/help_2.png" class="help-example-image" />
-                        <span class="help-example-desc">Dice is either in correct row or in correct
-                            column</span>
+                        <span class="help-example-desc">サイコロが正しい行または正しい列にある</span>
                     </div>
                     <div class="help-example-seperator"></div>
                     <div class="help-example-part">
                         <img src="/images/help_3.png" class="help-example-image" />
-                        <span class="help-example-desc">Dice is in correct position</span>
+                        <span class="help-example-desc">サイコロが正しい位置にある</span>
                     </div>
                 </div>
             </div>
@@ -284,10 +284,11 @@
             <div class="w3-modal-content w3-animate-bottom">
                 <div class="archive-banner">
                     <div class="banner-left"></div>
-                    <span class="banner-text">ARCHIVE</span>
+                    <span class="banner-text">アーカイブ</span>
                     <div class="banner-right"></div>
                 </div>
                 <div class="modal-close-icon" onclick="closeModal('archive-modal')">&times;</div>
+<!-- TODO: Translate next line -->
                 <span class="archive-text">Welcome to the Dicele Archive. Here you will find the
                     complete history of all our puzzles. These do not count
                     towards your regular Statistics, but are still very much
@@ -295,7 +296,7 @@
                 <div class="archive-separator"></div>
                 <div class="archive-stats">
                     <div class="archive-stats-left">
-                        <span class="archive-stats-title">PLAYED</span>
+                        <span class="archive-stats-title">遊んだ</span>
                     </div>
                     <div class="archive-stats-right">
                         <span class="archive-stats-value" data-title="games-played">0/77 (0%)</span>
@@ -303,7 +304,7 @@
                 </div>
                 <div class="archive-stats">
                     <div class="archive-stats-left">
-                        <span class="archive-stats-title">COMPLETED</span>
+                        <span class="archive-stats-title">完了</span>
                     </div>
                     <div class="archive-stats-right">
                         <span class="archive-stats-value" data-title="games-completed">0/77 (0%)</span>
@@ -323,68 +324,6 @@
                 </div>
                 <div class="archive-separator"></div>
                 <div class="archive-list" id="archive-list">
-                    <div class="archive-list-item">
-                        <div class="archive-list-item-left">
-                            <div class="archive-list-item-number">#77</div>
-                            <div class="archive-list-item-date">10/1/2023</div>
-                        </div>
-                        <div class="archive-list-item-right">
-                            <span class="archive-list-unattempted">UNATTEMPTED</span>
-                        </div>
-                    </div>
-                    <div class="archive-list-item">
-                        <div class="archive-list-item-left">
-                            <div class="archive-list-item-number">#76</div>
-                            <div class="archive-list-item-date">9/1/2023</div>
-                        </div>
-                        <div class="archive-list-item-right">
-                            <img src="/images/heart_broken.png" class="archive-list-item-right-icon" />
-                        </div>
-                    </div>
-                    <div class="archive-list-item">
-                        <div class="archive-list-item-left">
-                            <div class="archive-list-item-number">#75</div>
-                            <div class="archive-list-item-date">8/1/2023</div>
-                        </div>
-                        <div class="archive-list-item-right">
-                            <img src="/images/star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/no_star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/no_star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/no_star.png" class="archive-list-item-right-icon" />
-                        </div>
-                    </div>
-                    <div class="archive-list-item">
-                        <div class="archive-list-item-left">
-                            <div class="archive-list-item-number">#74</div>
-                            <div class="archive-list-item-date">7/1/2023</div>
-                        </div>
-                        <div class="archive-list-item-right">
-                            <span class="archive-list-unattempted">UNATTEMPTED</span>
-                        </div>
-                    </div>
-                    <div class="archive-list-item">
-                        <div class="archive-list-item-left">
-                            <div class="archive-list-item-number">#73</div>
-                            <div class="archive-list-item-date">6/1/2023</div>
-                        </div>
-                        <div class="archive-list-item-right">
-                            <img src="/images/heart_broken.png" class="archive-list-item-right-icon" />
-                        </div>
-                    </div>
-                    <div class="archive-list-item">
-                        <div class="archive-list-item-left">
-                            <div class="archive-list-item-number">#72</div>
-                            <div class="archive-list-item-date">5/1/2023</div>
-                        </div>
-                        <div class="archive-list-item-right">
-                            <img src="/images/star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/no_star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/no_star.png" class="archive-list-item-right-icon" />
-                            <img src="/images/no_star.png" class="archive-list-item-right-icon" />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -394,7 +333,7 @@
                 <div class="win-container">
                     <div class="finish-banner-win">
                         <div class="banner-left"></div>
-                        <span class="banner-text">AMAZING</span>
+                        <span class="banner-text">おめでとう</span>
                         <div class="banner-right"></div>
                     </div>
                     <div class="finish-stars-container" id="win-stars">
@@ -404,12 +343,13 @@
                         <img src="/images/no_star.png" class="finish-star" />
                         <img src="/images/no_star.png" class="finish-star" />
                     </div>
+<!-- TODO: Translate next line in JS -->
                     <span class="finish-text" data-field="win-comment"></span>
                 </div>
                 <div class="lose-container">
                     <div class="finish-banner-lose">
                         <div class="banner-left"></div>
-                        <span class="banner-text">GAME OVER</span>
+                        <span class="banner-text">ゲームオーバー</span>
                         <div class="banner-right"></div>
                     </div>
                     <div class="finish-stars-container">
@@ -419,6 +359,7 @@
                         <img src="/images/no_star.png" class="finish-star" />
                         <img src="/images/no_star.png" class="finish-star" />
                     </div>
+<!-- TODO: Translate next line -->
                     <span class="finish-text">You did well, better luck tomorrow</span>
                 </div>
                 <div class="finish-stats">
@@ -431,54 +372,56 @@
                         <span class="finish-stats-text" data-field="finish-time">1m 21s</span>
                     </div>
                 </div>
+<!-- TODO: Translate next line -->
                 <div class="invite-friends">CHALLENGE YOUR FRIENDS</div>
                 <div class="share-timer">
                     <div class="timer" id="finish-timer">
+<!-- TODO: Translate next line -->
                         <span class="timer-text">NEXT DICELE</span>
                         <span class="timer-time" data-field="timer-time">00:00:00</span>
                     </div>
                     <div class="share" onclick="Share()">
                         <img src="/images/share.png" class="share-icon" />
-                        <span class="share-text">SHARE</span>
+                        <span class="share-text">共有</span>
                     </div>
                 </div>
                 <div class="finish-stats-container">
-                    <span class="finish-stats-title">STATS</span>
+                    <span class="finish-stats-title">統計</span>
                     <div class="finish-stats-separator"></div>
                     <div class="stats-numbers">
                         <div class="stats-group">
                             <div class="stats-group-value" data-field="games-played">
                                 00
                             </div>
-                            <div class="stats-group-title">Played</div>
+                            <div class="stats-group-title">遊んだ</div>
                         </div>
                         <div class="stats-separator"></div>
                         <div class="stats-group">
                             <div class="stats-group-value" data-field="win-percent">
                                 00
                             </div>
-                            <div class="stats-group-title">Win %</div>
+                            <div class="stats-group-title">勝つ %</div>
                         </div>
                         <div class="stats-separator"></div>
                         <div class="stats-group">
                             <div class="stats-group-value" data-field="stars-count">
                                 00
                             </div>
-                            <div class="stats-group-title">Stars Collected</div>
+                            <div class="stats-group-title">集めた星</div>
                         </div>
                         <div class="stats-separator"></div>
                         <div class="stats-group">
                             <div class="stats-group-value" data-field="current-streak">
                                 00
                             </div>
-                            <div class="stats-group-title">Current Streak</div>
+                            <div class="stats-group-title">現在のストリーク</div>
                         </div>
                         <div class="stats-separator"></div>
                         <div class="stats-group">
                             <div class="stats-group-value" data-field="highest-streak">
                                 00
                             </div>
-                            <div class="stats-group-title">Highest Streak</div>
+                            <div class="stats-group-title">最高連勝</div>
                         </div>
                     </div>
                 </div>
@@ -489,7 +432,7 @@
         <div class="play-area">
             <div class="square-outer">
                 <span class="game-title">
-                    <span class="game-mode">Daily Dicele </span>
+                    <span class="game-mode">毎日のゲ数合計</span>
                     <span class="game-number">#00</span>
                 </span>
                 <div class="square" id="game">
@@ -543,7 +486,7 @@
                 </div>
                 <span class="moves-text">
                     <span class="moves-number"> 21 </span>
-                    moves remaining
+                    残りの手数
                 </span>
             </div>
             <div class="game-ad-box">
