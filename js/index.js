@@ -39,7 +39,7 @@ function BackToGame() {
 
     document.querySelector(".game-number").innerHTML = `#${Day
         }`;
-        document.querySelector(".game-mode").innerHTML = `Daily Dicele`;
+        document.querySelector(".game-mode").innerHTML = dailyDicele;
 
     document.querySelectorAll(".nav-left").forEach((element, index) => {
         if (index == 1) {
@@ -108,7 +108,6 @@ function BackToGame() {
         document.querySelector(".visit-tomorrow").style.display = "block";
 
         let stars = "";
-        let winComment = "Aren't you a genius!";
         if (localStorage.TodaySwapCount > 0) {
             stars = stars.concat(
                 '<img src="/images/star.png" class="finish-star" />'
@@ -200,7 +199,7 @@ function setArchiveList(finishStates, stars) {
                         </div>
                         <div class="archive-list-item-right">
                             <span class="archive-list-unattempted"
-                                >UNATTEMPTED</span
+                                >${unattempted}</span
                             >
                         </div>
                     </div>`;
@@ -275,7 +274,7 @@ function StartArchiveGame(index) {
 
     document.querySelector(".game-number").innerHTML = `#${index + 1
         }`;
-    document.querySelector(".game-mode").innerHTML = `Dicele`;
+    document.querySelector(".game-mode").innerHTML = dicele;
 
     document.querySelector(".moves-number").innerHTML = `${moves
         }`;
@@ -406,7 +405,6 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
             count: 100,
         });
         let stars = "";
-        let winComment = "Aren't you a genius!";
         if (movesRemaining > 0) {
             stars = stars.concat(
                 '<img src="/images/star.png" class="finish-star" />'
@@ -552,7 +550,6 @@ function gameArchiveFinish(won) {
             document.querySelector(".win-text").style.display = "none";
             document.querySelector(".lose-container").style.display = "none";
             let stars = "";
-            let winComment = "Aren't you a genius!";
             if (moves > 0) {
                 stars = stars.concat(
                     '<img src="/images/star.png" class="finish-star" />'
@@ -955,7 +952,6 @@ if (localStorage.LastSolveDate) {
         document.querySelector(".visit-tomorrow").style.display = "block";
 
         let stars = "";
-        let winComment = "Aren't you a genius!";
         if (localStorage.TodaySwapCount > 0) {
             stars = stars.concat(
                 '<img src="/images/star.png" class="finish-star" />'
@@ -1371,8 +1367,7 @@ if (FirstTime && !isArchive) {
 
 function resumeGame() {
     document.getElementById('tut-overlay').style.display = "none";
-    document.querySelector(".box-modal").innerHTML = `<h6 class = "tutMsg">SWAP DICE TO FIND ITS</h6>
-    <h6 class = "tutMsg">CORRECT PLACE</h6>`;
+    document.querySelector(".box-modal").innerHTML = boxModalContent;
     document.querySelector(".box-modal").style.display = "none"
 }
 

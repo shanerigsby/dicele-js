@@ -114,6 +114,7 @@ body {
     flex-direction: column;
     position: absolute!important;
     left: 0;
+    width: 220px;
 }
 
 #overlay {
