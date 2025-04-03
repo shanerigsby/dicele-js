@@ -856,7 +856,7 @@ window.addEventListener("click", (evt) => {
 
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-var startDate = new Date(2022, 9, 25, 00, 00, 00);
+var startDate = new Date(2025, 4, 1, 00, 00, 00);
 var currentDate = new Date();
 function dateDiffInDays(date1, date2) {
 
