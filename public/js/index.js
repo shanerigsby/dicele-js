@@ -1,3 +1,10 @@
+if (localStorage.ArchiveSwapList) {
+    localStorage.ArchiveSwapList = JSON.stringify(JSON.parse(localStorage.ArchiveSwapList).map(x => x > 5 ? 0 : x));
+}
+if (localStorage.ArchiveList) {
+    localStorage.ArchiveList = JSON.stringify(JSON.parse(localStorage.ArchiveList).map(x => (x > 2 || x < 0) ? 0 : x));
+}
+
 function openSideBar() {
     document.getElementById("sidebar").style.display = "flex";
     document.getElementById("overlay").style.display = "block";
@@ -856,7 +863,7 @@ window.addEventListener("click", (evt) => {
 
 const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-var startDate = new Date(2025, 3, 1, 00, 00, 00);
+var startDate = new Date(2025, 3, 1, 0, 0, 0);
 var currentDate = new Date();
 function dateDiffInDays(date1, date2) {
 
