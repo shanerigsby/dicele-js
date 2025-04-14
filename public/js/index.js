@@ -5,6 +5,22 @@ if (localStorage.ArchiveList) {
     localStorage.ArchiveList = JSON.stringify(JSON.parse(localStorage.ArchiveList).map(x => (x > 2 || x < 0) ? 0 : x));
 }
 
+function getWinComment() {
+    const comments = [
+        "Look at you, smarty pants!",
+        "Check out the big brain on you!",
+        "Nerd alert!",
+        "Ain't you some kinda jeenius!",
+        "Certified dice master!",
+        "You're officially pretty good!",
+        "Whoa, prodigy in the house!",
+        "Shouldn't you be designing rockets or something?",
+        "You're the best around, and nothing's ever gonna keep you down!",
+        "Don't look now! There's a wizard amongst us!"
+    ];
+    return comments[Math.floor(Math.random()*comments.length)];
+}
+
 function openSideBar() {
     document.getElementById("sidebar").style.display = "flex";
     document.getElementById("overlay").style.display = "block";
@@ -119,7 +135,7 @@ function BackToGame() {
         document.querySelector(".visit-tomorrow").style.display = "block";
 
         let stars = "";
-        let winComment = "Aren't you a genius!";
+        let winComment = getWinComment();
         if (localStorage.TodaySwapCount > 0) {
             stars = stars.concat(
                 '<img src="/images/star.png" class="finish-star" />'
@@ -424,7 +440,7 @@ function gameFinish(won, movesRemaining, state, timeSpent) {
             count: 100,
         });
         let stars = "";
-        let winComment = "Aren't you a genius!";
+        let winComment = getWinComment();
         if (movesRemaining > 0) {
             stars = stars.concat(
                 '<img src="/images/star.png" class="finish-star" />'
@@ -572,7 +588,7 @@ function gameArchiveFinish(won) {
             document.querySelector(".win-text").style.display = "none";
             document.querySelector(".lose-container").style.display = "none";
             let stars = "";
-            let winComment = "Aren't you a genius!";
+            let winComment = getWinComment();
             if (moves > 0) {
                 stars = stars.concat(
                     '<img src="/images/star.png" class="finish-star" />'
@@ -977,7 +993,7 @@ if (localStorage.LastSolveDate) {
         document.querySelector(".visit-tomorrow").style.display = "block";
 
         let stars = "";
-        let winComment = "Aren't you a genius!";
+        let winComment = getWinComment();
         if (localStorage.TodaySwapCount > 0) {
             stars = stars.concat(
                 '<img src="/images/star.png" class="finish-star" />'
